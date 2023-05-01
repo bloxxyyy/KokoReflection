@@ -49,7 +49,7 @@ public static class FieldsFor<T> where T : Attribute, IDisplayable {
 
         for (int i = 0; i < fields.Length; i++) {
             var value = fields[i].GetValue(obj)?.ToString() ?? "null";
-            DisplayAction($"{fields[i]} : {value}");
+            DisplayAction($"{fields[i].Name} : {value}");
         }
     }
     
