@@ -13,7 +13,6 @@ public static class FieldsFor<T> where T : Attribute, IDisplayable {
     private static readonly Dictionary<Type, FieldInfo[]> reflectiveFieldsCache = new();
     private static readonly Dictionary<Type, bool> typeHasFieldsCache = new();
 
-
     /// <summary>
     /// The action that will be used to display field values.
     /// </summary>
@@ -50,7 +49,7 @@ public static class FieldsFor<T> where T : Attribute, IDisplayable {
 
         for (int i = 0; i < fields.Length; i++) {
             var value = fields[i].GetValue(obj)?.ToString() ?? "null";
-            DisplayAction(value);
+            DisplayAction($"{fields[i]} : {value}");
         }
     }
     
