@@ -41,7 +41,7 @@ public class FieldsForTests {
         var output = string.Empty;
         FieldsFor<InitializableAttribute>.DisplayAction = message => output += message;
 
-        FieldsFor<InitializableAttribute>.Display(obj);
+        FieldsFor<InitializableAttribute>.GetDisplayables(obj);
 
         Assert.Contains("_number", output);
         Assert.Contains("Score", output);
